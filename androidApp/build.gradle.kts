@@ -16,15 +16,18 @@ sourceSets {
         implementation(projects.shared)
         implementation("androidx.core:core-splashscreen:1.0.1")
         implementation(libs.androidx.activity.compose)
-
+        implementation(libs.compose.runtime)
+        implementation(libs.compose.foundation)
+        implementation(libs.compose.material3)
+        implementation(libs.compose.ui)
         implementation(libs.koin.core)
         implementation(libs.koin.compose)
         implementation(libs.koin.compose.viewmodel)
         implementation(libs.compose.uiToolingPreview)
-        implementation(libs.firebase.common.ktx)
         debugImplementation(libs.compose.uiTooling)
         implementation(project(":shared"))
         implementation(project(":di"))
+        implementation(project(":navigation"))
     }
 }
 

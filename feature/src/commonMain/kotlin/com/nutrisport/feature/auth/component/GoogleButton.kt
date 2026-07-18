@@ -29,6 +29,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
+import com.nutrisport.shared.FontSize
 
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
@@ -40,7 +41,6 @@ fun GoogleButton(
     primaryText: String = "Sign in with Google",
     secondaryText: String = "Please wait...",
     shape: Shape = RoundedCornerShape(size = 99.dp),
-    progressIndicatorColor: Color = IconSecondary,
     onClick: () -> Unit,
 ) {
     var buttonText by remember { mutableStateOf(primaryText) }
@@ -54,11 +54,11 @@ fun GoogleButton(
             .clip(shape)
             .border(
                 width = 1.dp,
-                color = borderColor,
+                color = Color.Black,
                 shape = shape
             )
             .clickable(enabled = !loading) { onClick() },
-        color = backgroundColor
+        color = Color.Transparent
     ) {
         Row(
             modifier = Modifier
@@ -73,7 +73,7 @@ fun GoogleButton(
             ) { loadingState ->
                 if (!loadingState) {
                     Icon(
-                        painter = painterResource(icon),
+                        painter = painterResource(),
                         contentDescription = "Google Logo",
                         tint = Color.Unspecified
                     )
@@ -81,14 +81,12 @@ fun GoogleButton(
                     CircularProgressIndicator(
                         modifier = Modifier.size(24.dp),
                         strokeWidth = 2.dp,
-                        color = progressIndicatorColor
                     )
                 }
             }
             Spacer(modifier = Modifier.width(12.dp))
             Text(
                 text = buttonText,
-                color = TextPrimary,
                 fontSize = FontSize.REGULAR
             )
         }

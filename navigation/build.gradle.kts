@@ -46,6 +46,12 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.bundles.ktor)
+            implementation(project(path = ":shared"))
+            implementation(project(path = ":feature"))
+            implementation(libs.compose.navigation)
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

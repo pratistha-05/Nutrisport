@@ -1,6 +1,5 @@
 package com.example.nutrisport
 
-package com.nutrisport.shared
 
 import androidx.compose.ui.graphics.Color
 

@@ -51,7 +51,10 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
-
+            implementation(project(path = ":shared"))
+            implementation(project(path = ":navigation"))
+            implementation(libs.auth.kmp)
+            implementation(libs.auth.firebase.kmp)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

@@ -1,5 +1,4 @@
 package com.nutrisport.data.domain
-
 import com.example.nutrisport.data.Customer
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.FirebaseUser
