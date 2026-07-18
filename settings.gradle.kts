@@ -27,6 +27,11 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+include(":data")
+include(":di")
+include(":feature")
 
+include(":feature")
+include(":navigation")
 include(":androidApp")
 include(":shared")

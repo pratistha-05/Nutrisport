@@ -11,13 +11,21 @@ kotlin {
         jvmTarget = JvmTarget.JVM_11
     }
 }
-dependencies {
-    implementation(projects.shared)
-    implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation(libs.androidx.activity.compose)
+sourceSets {
+    dependencies {
+        implementation(projects.shared)
+        implementation("androidx.core:core-splashscreen:1.0.1")
+        implementation(libs.androidx.activity.compose)
 
-    implementation(libs.compose.uiToolingPreview)
-    debugImplementation(libs.compose.uiTooling)
+        implementation(libs.koin.core)
+        implementation(libs.koin.compose)
+        implementation(libs.koin.compose.viewmodel)
+        implementation(libs.compose.uiToolingPreview)
+        implementation(libs.firebase.common.ktx)
+        debugImplementation(libs.compose.uiTooling)
+        implementation(project(":shared"))
+        implementation(project(":di"))
+    }
 }
 
 android {
