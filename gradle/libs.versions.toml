@@ -31,7 +31,9 @@ splash = "1.2.0"
 ui = "1.11.0"
 compose-plugin = "1.6.11"
 navigationCompose = "2.9.8"
-firebaseCommonKtx = "22.1.0"
+firebaseCommonKtx = "21.0.0"
+firebaseAuthKtx = "23.2.1"
+firebaseBom = "33.9.0"
 
 
 [libraries]
@@ -87,6 +89,8 @@ auth-firebase-kmp = { module = "io.github.mirzemehdi:kmpauth-firebase", version.
 kmp-notifier = { module = "io.github.mirzemehdi:kmpnotifier", version.ref = "notifier" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 firebase-common-ktx = { group = "com.google.firebase", name = "firebase-common-ktx", version.ref = "firebaseCommonKtx" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

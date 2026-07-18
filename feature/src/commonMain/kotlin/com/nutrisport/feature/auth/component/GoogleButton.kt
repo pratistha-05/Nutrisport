@@ -72,11 +72,11 @@ fun GoogleButton(
                 targetState = loading
             ) { loadingState ->
                 if (!loadingState) {
-                    Icon(
-                        painter = painterResource(),
-                        contentDescription = "Google Logo",
-                        tint = Color.Unspecified
-                    )
+//                    Icon(
+//                        painter = painterResource(),
+//                        contentDescription = "Google Logo",
+//                        tint = Color.Unspecified
+//                    )
                 } else {
                     CircularProgressIndicator(
                         modifier = Modifier.size(24.dp),

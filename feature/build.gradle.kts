@@ -37,6 +37,12 @@ kotlin {
 
     sourceSets {
 
+        androidMain.dependencies {
+            implementation(project.dependencies.platform(libs.firebase.bom))
+            implementation(libs.firebase.auth.ktx)
+            implementation(libs.firebase.common.ktx)
+        }
+
         commonMain.dependencies {
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
@@ -52,7 +58,6 @@ kotlin {
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
             implementation(project(path = ":shared"))
-            implementation(project(path = ":navigation"))
             implementation(libs.auth.kmp)
             implementation(libs.auth.firebase.kmp)
         }

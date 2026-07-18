@@ -30,7 +30,7 @@ fun AuthScreen(
     navigateToHome: () -> Unit
 ) {
     val scope = rememberCoroutineScope()
-    val viewModel = koinViewModel<AuthViewModel>()
+//    val viewModel = koinViewModel<AuthViewmodel>()
     var loadingState by remember { mutableStateOf(false) }
 
     Scaffold { padding ->
@@ -65,16 +65,16 @@ fun AuthScreen(
                 linkAccount = false,
                 onResult = { result ->
                     result.onSuccess { user ->
-                        viewModel.createCustomer(
-                            user = user,
-                            onSuccess = {
-                                scope.launch {
-                                    navigateToHome()
-                                }
-                            },
-                            onError = {
-                            }
-                        )
+//                        viewModel.createCustomer(
+//                            user = user,
+//                            onSuccess = {
+//                                scope.launch {
+//                                    navigateToHome()
+//                                }
+//                            },
+//                            onError = {
+//                            }
+//                        )
                         loadingState = false
                     }.onFailure { error ->
                         if (error.message?.contains("A network error") == true) {
