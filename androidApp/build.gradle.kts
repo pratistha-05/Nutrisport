@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.google.services)
 }
 
 kotlin {
@@ -13,6 +14,9 @@ kotlin {
 }
 sourceSets {
     dependencies {
+        implementation(project.dependencies.platform(libs.firebase.bom))
+        implementation(libs.firebase.auth.ktx)
+        implementation(libs.firebase.common.ktx)
         implementation(projects.shared)
         implementation("androidx.core:core-splashscreen:1.0.1")
         implementation(libs.androidx.activity.compose)
@@ -25,6 +29,8 @@ sourceSets {
         implementation(libs.koin.compose.viewmodel)
         implementation(libs.compose.uiToolingPreview)
         debugImplementation(libs.compose.uiTooling)
+        implementation(libs.auth.kmp)
+        implementation(libs.auth.firebase.kmp)
         implementation(project(":shared"))
         implementation(project(":di"))
         implementation(project(":navigation"))

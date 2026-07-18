@@ -9,8 +9,6 @@ import com.example.navigation.SetupNavGraph
 @Preview
 fun App() {
     MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-
         SetupNavGraph ()
     }
 }
