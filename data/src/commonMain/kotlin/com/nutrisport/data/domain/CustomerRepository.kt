@@ -4,5 +4,11 @@ import dev.gitlive.firebase.auth.FirebaseUser
 
 interface CustomerRepository {
 
-    suspend fun createCustomer(customer: FirebaseUser, onSuccess: () -> Unit, onFailure: (Exception) -> Unit)
+    suspend fun createCustomer(
+        customer: FirebaseUser,
+        onSuccess: () -> Unit,
+        onFailure: (Exception) -> Unit
+    )
+
+     fun getCurrentUserId(): String?
 }

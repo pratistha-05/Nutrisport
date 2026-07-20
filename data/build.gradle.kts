@@ -25,7 +25,7 @@ kotlin {
         minSdk = libs.versions.android.minSdk.get().toInt()
 
         compilerOptions {
-            jvmTarget = JvmTarget.JVM_11
+            jvmTarget = JvmTarget.JVM_17
         }
         androidResources {
             enable = true
@@ -52,8 +52,6 @@ kotlin {
             implementation(libs.firebase.storage)
             implementation(libs.auth.firebase.kmp)
             implementation(project(path = ":shared"))
-            implementation(project(path = ":di"))
-
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

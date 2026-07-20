@@ -32,7 +32,10 @@ dependencyResolutionManagement {
 include(":data")
 include(":di")
 include(":feature")
+include(":feature:auth")
+include(":feature:home")
 
+include(":feature:home")
 include(":feature")
 include(":navigation")
 include(":androidApp")

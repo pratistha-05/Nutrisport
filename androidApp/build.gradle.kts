@@ -34,6 +34,7 @@ sourceSets {
         implementation(project(":shared"))
         implementation(project(":di"))
         implementation(project(":navigation"))
+        implementation(project(":data"))
     }
 }
 

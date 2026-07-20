@@ -14,13 +14,13 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "feature"
+            baseName = "home"
             isStatic = true
         }
     }
 
     androidLibrary {
-        namespace = "com.example.nutrisport.feature"
+        namespace = "com.example.nutrisport.home"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
 
@@ -59,6 +59,7 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
             implementation(project(path = ":shared"))
             implementation(libs.auth.kmp)
+            implementation(libs.compose.navigation)
             implementation(libs.auth.firebase.kmp)
         }
         commonTest.dependencies {
