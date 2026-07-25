@@ -1,4 +1,4 @@
-package com.nutrisport.home
+package com.nutrisport.home.sidenav
 
 import com.example.nutrisport.data.Resources
 import org.jetbrains.compose.resources.DrawableResource

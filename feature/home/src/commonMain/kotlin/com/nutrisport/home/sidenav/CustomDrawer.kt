@@ -1,4 +1,4 @@
-package com.nutrisport.home.component
+package com.nutrisport.home.sidenav
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -19,8 +19,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.example.nutrisport.IconPrimary
 import com.example.nutrisport.TextPrimary
-import com.nutrisport.home.CustomDrawerState
-import com.nutrisport.home.DrawerItem
 import com.nutrisport.shared.FontSize
 import org.jetbrains.compose.resources.painterResource
 

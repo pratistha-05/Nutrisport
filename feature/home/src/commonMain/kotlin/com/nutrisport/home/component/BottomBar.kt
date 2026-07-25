@@ -19,9 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.example.nutrisport.IconPrimary
 import com.example.nutrisport.IconSecondary
 import com.example.nutrisport.SurfaceLighter
-import com.example.nutrisport.data.Resources
 import com.nutrisport.home.BottomBarDestination
-import nutrisport.feature.home.generated.resources.Res
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
@@ -49,7 +47,7 @@ fun BottomBar(
             Box(contentAlignment = Alignment.TopEnd) {
                 Icon(
                     modifier = Modifier.clickable { onSelect(destination) },
-                    painter = painterResource(Resources.Image.GoogleLogo),
+                    painter = painterResource(destination.icon),
                     contentDescription = "Bottom Bar destination icon",
                     tint = animatedTint
                 )
