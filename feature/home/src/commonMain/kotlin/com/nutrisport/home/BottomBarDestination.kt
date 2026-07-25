@@ -1,6 +1,6 @@
 package com.nutrisport.home
 
-import com.example.nutrisport.Screen
+import com.example.nutrisport.utils.Screen
 import com.example.nutrisport.data.Resources
 import org.jetbrains.compose.resources.DrawableResource
 

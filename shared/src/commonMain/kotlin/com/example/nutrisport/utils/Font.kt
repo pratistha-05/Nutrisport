@@ -1,9 +1,6 @@
 package com.nutrisport.shared
 
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
-import org.jetbrains.compose.resources.Font
 
 
 object FontSize {

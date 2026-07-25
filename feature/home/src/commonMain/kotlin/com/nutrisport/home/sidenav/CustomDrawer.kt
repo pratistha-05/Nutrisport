@@ -17,8 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import com.example.nutrisport.IconPrimary
-import com.example.nutrisport.TextPrimary
+import com.example.nutrisport.utils.IconPrimary
+import com.example.nutrisport.utils.TextPrimary
 import com.nutrisport.shared.FontSize
 import org.jetbrains.compose.resources.painterResource
 

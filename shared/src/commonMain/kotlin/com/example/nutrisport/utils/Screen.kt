@@ -1,4 +1,4 @@
-package com.example.nutrisport
+package com.example.nutrisport.utils
 
 import kotlinx.serialization.Serializable
 

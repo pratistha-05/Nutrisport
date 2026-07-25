@@ -1,5 +1,6 @@
 package com.nutrisport.data.domain
 import com.example.nutrisport.data.Customer
+import com.example.nutrisport.utils.remote.NetworkResult
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.FirebaseUser
 import dev.gitlive.firebase.auth.auth
@@ -36,6 +37,15 @@ class CustomerRepositoryImpl : CustomerRepository {
         }
         catch(e: Exception){
             onFailure(e)
+        }
+    }
+
+    override suspend fun singout(): NetworkResult<Unit> {
+        return try {
+            Firebase.auth.signOut()
+            NetworkResult.Success(Unit)
+        } catch (e: Exception) {
+            NetworkResult.Error(e.message)
         }
     }
 

@@ -17,8 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.nutrisport.TextPrimary
-import com.example.nutrisport.TextSecondary
+import com.example.nutrisport.utils.TextPrimary
+import com.example.nutrisport.utils.TextSecondary
 import com.mmk.kmpauth.firebase.google.GoogleButtonUiContainerFirebase
 import com.nutrisport.auth.ui.AuthViewModel
 import com.nutrisport.feature.auth.component.GoogleButton

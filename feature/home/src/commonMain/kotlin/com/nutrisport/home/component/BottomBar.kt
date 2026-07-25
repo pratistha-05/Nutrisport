@@ -16,9 +16,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import com.example.nutrisport.IconPrimary
-import com.example.nutrisport.IconSecondary
-import com.example.nutrisport.SurfaceLighter
+import com.example.nutrisport.utils.IconPrimary
+import com.example.nutrisport.utils.IconSecondary
+import com.example.nutrisport.utils.SurfaceLighter
 import com.nutrisport.home.BottomBarDestination
 import org.jetbrains.compose.resources.painterResource
 

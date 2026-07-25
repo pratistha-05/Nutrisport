@@ -11,6 +11,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -20,16 +22,35 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.nutrisport.Screen
+import com.example.nutrisport.utils.Screen
 import com.example.nutrisport.data.Resources
 import com.nutrisport.home.component.BottomBar
 import com.nutrisport.home.sidenav.CustomDrawer
 import com.nutrisport.home.sidenav.CustomDrawerState
+import com.example.nutrisport.utils.remote.NetworkResult
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun HomeGraphScreen() {
+fun HomeGraphScreen(
+    navigateToAuth: () -> Unit,
+    ) {
+    val viewmodel = koinViewModel<HomeGraphViewmodel>()
+    val signOutState by viewmodel.signOutState.collectAsState()
+
+    LaunchedEffect(signOutState) {
+        when (signOutState) {
+            is NetworkResult.Success -> {
+                navigateToAuth()
+            }
+            is NetworkResult.Error -> {
+                // Show error message
+            }
+            else -> {}
+        }
+    }
+
     val navController = rememberNavController()
     val currentRoute = navController.currentBackStackEntryAsState()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -60,7 +81,10 @@ fun HomeGraphScreen() {
                         scope.launch { drawerState.close() }
                     },
                     onSignOutClick = {
-                        scope.launch { drawerState.close() }
+                        scope.launch { 
+                            viewmodel.signout()
+                            drawerState.close() 
+                        }
                     },
                     onAdminClick = {
                         scope.launch { drawerState.close() }

@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.nutrisport.Screen
+import com.example.nutrisport.utils.Screen
 import com.nutrisport.feature.ui.AuthScreen
 import com.nutrisport.home.HomeGraphScreen
 
@@ -26,8 +26,15 @@ fun SetupNavGraph(startDestination: Screen = Screen.Auth) {
             )
         }
 
-        composable<Screen.HomeGraph>{
-            HomeGraphScreen()
+        composable<Screen.HomeGraph> {
+            HomeGraphScreen(
+                navigateToAuth = {
+                    navController.navigate(Screen.Auth) {
+                        // Clear the backstack so the user can't go back to Home after signing out
+                        popUpTo(Screen.HomeGraph) { inclusive = true }
+                    }
+                }
+            )
         }
     }
 }
