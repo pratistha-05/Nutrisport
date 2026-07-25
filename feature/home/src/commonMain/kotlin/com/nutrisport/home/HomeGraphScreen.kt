@@ -15,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.nutrisport.Screen
+import com.example.nutrisport.data.Resources
 import com.nutrisport.home.component.BottomBar
 import io.ktor.websocket.Frame
 import org.jetbrains.compose.resources.painterResource
@@ -45,7 +46,7 @@ fun HomeGraphScreen() {
                 },
                 navigationIcon ={
                     IconButton(onClick = {}){
-                        Icon(painter = painterResource(), contentDescription = null))
+                        Icon(painter = painterResource(Resources.Image.GoogleLogo), contentDescription = null)
                     }
                 }
             )

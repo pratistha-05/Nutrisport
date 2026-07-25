@@ -1,5 +1,6 @@
 package com.nutrisport.home
 
+import com.example.nutrisport.data.Resources
 import org.jetbrains.compose.resources.DrawableResource
 
 enum class DrawerItem(
@@ -8,26 +9,26 @@ enum class DrawerItem(
 ){
     Profile(
         title = "Profile",
-        icon = DrawerIcons.Profile
+        icon = Resources.Icon.Person
     ),
     Blog(
         title = "Blog",
-        icon = DrawerIcons.Settings
+        icon = Resources.Icon.MapPin
     ),
     Locations(
         title = "Locations",
-        icon = DrawerIcons.Logout
+        icon = Resources.Icon.MapPin
     ),
     Contact(
         title = "Contact Us",
-        icon = DrawerIcons.Logout
+        icon = Resources.Image.GoogleLogo
     ),
     SignOut(
         title = " Sign Out",
-        icon = DrawerIcons.Logout
+        icon = Resources.Icon.SignOut
     ),
     Admin(
         title = " Admin",
-        icon = DrawerIcons.Logout
+        icon =Resources.Icon.Unlock
     ),
 }

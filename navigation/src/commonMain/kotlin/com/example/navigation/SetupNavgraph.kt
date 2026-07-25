@@ -16,6 +16,7 @@ fun SetupNavGraph(startDestination: Screen = Screen.Auth) {
         startDestination = startDestination
     ) {
         composable<Screen.Auth> {
+            //TODO: why is this not navigating
             AuthScreen(
                 navigateToHome = {
                     navController.navigate(Screen.Auth) {

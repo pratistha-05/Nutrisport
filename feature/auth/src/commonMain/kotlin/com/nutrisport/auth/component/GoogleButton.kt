@@ -29,9 +29,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
+import com.example.nutrisport.data.Resources
 import com.nutrisport.shared.FontSize
-
-import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
@@ -72,11 +71,12 @@ fun GoogleButton(
                 targetState = loading
             ) { loadingState ->
                 if (!loadingState) {
-//                    Icon(
-//                        painter = painterResource(),
-//                        contentDescription = "Google Logo",
-//                        tint = Color.Unspecified
-//                    )
+                    Icon(
+                        modifier = Modifier.size(24.dp),
+                        painter = painterResource(Resources.Image.GoogleLogo),
+                        contentDescription = "Google Logo",
+                        tint = Color.Unspecified
+                    )
                 } else {
                     CircularProgressIndicator(
                         modifier = Modifier.size(24.dp),

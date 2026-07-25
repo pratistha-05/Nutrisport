@@ -1,25 +1,27 @@
 package com.nutrisport.home
 
 import com.example.nutrisport.Screen
+import com.example.nutrisport.data.Resources
+import org.jetbrains.compose.resources.DrawableResource
 
 enum class BottomBarDestination (
-    val icon: Int,
+    val icon: DrawableResource,
     val title: String,
     val screen: Screen
 ){
     ProductsOverview(
-        icon = 0,
+        icon = Resources.Icon.Home,
         title = "Products",
         Screen.ProductsOverview
     ),
     Cart(
-        icon = 0,
+        icon = Resources.Icon.ShoppingCart,
         title = "Cart",
         Screen.Cart
 
     ),
     Categories(
-        icon = 0,
+        icon = Resources.Icon.Categories,
         title = "Categories",
         Screen.Categories
     )
