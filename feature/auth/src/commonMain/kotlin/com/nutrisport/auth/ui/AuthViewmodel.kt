@@ -1,5 +1,28 @@
-package com.nutrisport.feature.ui
+package com.nutrisport.auth.ui
 
-class AuthViewmodel{
 
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.nutrisport.data.domain.CustomerRepository
+import dev.gitlive.firebase.auth.FirebaseUser
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
+import kotlinx.coroutines.launch
+
+class AuthViewModel(
+    private val customerRepository: CustomerRepository,
+) : ViewModel() {
+    fun createCustomer(
+        user: FirebaseUser?,
+        onSuccess: () -> Unit,
+        onError: (Exception) -> Unit,
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            customerRepository.createCustomer(
+                onSuccess = onSuccess,
+                onFailure = onError,
+                customer = user
+            )
+        }
+    }
 }

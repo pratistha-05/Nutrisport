@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.example.nutrisport.TextPrimary
 import com.example.nutrisport.TextSecondary
 import com.mmk.kmpauth.firebase.google.GoogleButtonUiContainerFirebase
+import com.nutrisport.auth.ui.AuthViewModel
 import com.nutrisport.feature.auth.component.GoogleButton
 import com.nutrisport.shared.FontSize
 import kotlinx.coroutines.launch
@@ -30,7 +31,7 @@ fun AuthScreen(
     navigateToHome: () -> Unit
 ) {
     val scope = rememberCoroutineScope()
-//    val viewModel = koinViewModel<AuthViewmodel>()
+    val viewModel = koinViewModel<AuthViewModel>()
     var loadingState by remember { mutableStateOf(false) }
 
     Scaffold { padding ->
@@ -65,16 +66,16 @@ fun AuthScreen(
                 linkAccount = false,
                 onResult = { result ->
                     result.onSuccess { user ->
-//                        viewModel.createCustomer(
-//                            user = user,
-//                            onSuccess = {
-//                                scope.launch {
-//                                    navigateToHome()
-//                                }
-//                            },
-//                            onError = {
-//                            }
-//                        )
+                        viewModel.createCustomer(
+                            user = user,
+                            onSuccess = {
+                                scope.launch {
+                                    navigateToHome()
+                                }
+                            },
+                            onError = {
+                            }
+                        )
                         loadingState = false
                     }.onFailure { error ->
                         if (error.message?.contains("A network error") == true) {
